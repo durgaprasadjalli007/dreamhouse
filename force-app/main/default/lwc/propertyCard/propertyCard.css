@@ -1,0 +1,168 @@
+.property-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+.property-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+.property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.status-pill {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    z-index: 10;
+}
+.status-pill.available { background: #2e844a; }
+.status-pill.pending { background: #ffb75d; }
+.status-pill.sold { background: #ba0517; }
+.status-pill.withdrawn { background: #808080; }
+.status-pill.under-contract { background: #d97706; }
+
+.favorite-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ffffff;
+    border: 1.5px solid #444;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    z-index: 20;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.favorite-icon lightning-icon {
+    --slds-c-icon-color-foreground-default: #ffffff;
+    --slds-c-icon-size: 1.4rem;
+    stroke: #444;
+    stroke-width: 1px;
+}
+.favorite-icon:hover { transform: scale(1.08); }
+.favorite-icon.active {
+    border-color: #1a73e8;
+    background: #ffffff;
+}
+.favorite-icon.active lightning-icon {
+    --slds-c-icon-color-foreground-default: #1a73e8;
+    stroke: #1a73e8;
+}
+
+.card-body {
+    padding: 1rem 1.2rem;
+}
+.property-name {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.4rem;
+}
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0176d3;
+    margin: 0.3rem 0;
+}
+
+.property-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.4rem;
+}
+.property-type {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.property-meta lightning-icon {
+    --slds-c-icon-color-foreground-default: #444;
+    --slds-c-icon-size: 1rem;
+}
+
+.features {
+    display: flex;
+    gap: 0.4rem;
+    margin: 0.6rem 0 1rem;
+}
+.pill {
+    background: #f1f1f1;
+    border-radius: 20px;
+    padding: 0.3rem 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #333;
+}
+.pill-icon {
+    --slds-c-icon-color-foreground-default: #555;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.secondary-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8rem;
+    margin-top: 0.5rem;
+}
+.custom-secondary-btn .slds-button {
+    background: #ffffff !important;
+    border: 1px solid #0176d3 !important;
+    border-radius: 30px !important;
+    color: #0176d3 !important;
+    padding: 0.45rem 1.4rem !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    box-shadow: none !important;
+}
+
+.custom-secondary-btn lightning-icon {
+    --slds-c-icon-color-foreground-default: #0176d3;
+    --slds-c-icon-size: 1rem;
+}
+
+.custom-secondary-btn .slds-button:hover {
+    background: #f4f8ff !important;
+    border-color: #0156a2 !important;
+    color: #0156a2 !important;
+}

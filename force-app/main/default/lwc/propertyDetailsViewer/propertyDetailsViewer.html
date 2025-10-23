@@ -1,0 +1,58 @@
+<template>
+    <lightning-card class="card">
+        <div class="card-header">
+            <h1 class="page-title">Property Details</h1>
+
+            <div class="property-row">
+                <h2 class="property-name">{name}</h2>
+                <template if:true={statusLabel}>
+                    <span class={statusBadgeClass}>{statusLabel}</span>
+                </template>
+            </div>
+        </div>
+
+        <div class="slds-p-around_medium content">
+            <template if:true={propertyRecord}>
+                <section class="details">
+                    <h3 class="section-title">Basic Information</h3>
+                    <p><strong>Type:</strong> {type}</p>
+                    <p><strong>Price:</strong> {price}</p>
+                    <p><strong>Year Built:</strong> {yearBuilt}</p>
+                    <p><strong>Bedrooms:</strong> {bedrooms}</p>
+                    <p><strong>Bathrooms:</strong> {bathrooms}</p>
+                    <p><strong>Square Feet:</strong> {squareFeet}</p>
+
+                    <h3 class="section-title">Location</h3>
+                    <p class="address">{address}</p>
+
+                    <h3 class="section-title">Description</h3>
+                    <p class="desc">{description}</p>
+                </section>
+
+                <section class="images-section">
+                    <template if:true={images}>
+                        <div class="image-gallery">
+                            <template for:each={images} for:item="img">
+                                <div key={img.id} class="thumb">
+                                    <img src={img.src} alt="Image of {name}" class="prop-img"/>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+                    <template if:true={errorImages}>
+                        <p class="slds-text-color_error">{errorImages}</p>
+                    </template>
+                </section>
+
+                <div class="actions">
+                    <lightning-button variant="brand" label="Contact" onclick={handleContactClick}></lightning-button>
+                    <lightning-button variant="neutral" label="Tour" onclick={handleTourClick}></lightning-button>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
