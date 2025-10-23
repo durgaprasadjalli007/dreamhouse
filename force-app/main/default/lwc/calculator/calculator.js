@@ -25,6 +25,10 @@ export default class Calculator extends LightningElement {
         this.result = this.number1 * this.number2;
     }
 
+    //  handleMultiply() {
+    //     this.result = this.number1 * this.number2;
+    // }
+
     handleDivide() {
         if (this.number2 === 0) {
             this.result = 'Cannot divide by zero';
